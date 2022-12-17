@@ -1,0 +1,15 @@
+C:\Data\DeloitteProject\Deloitte.Portal\Deloitte.Portal.Service\bin\Debug\netcoreapp3.1\Deloitte.Portal.Service.deps.json
+C:\Data\DeloitteProject\Deloitte.Portal\Deloitte.Portal.Service\bin\Debug\netcoreapp3.1\Deloitte.Portal.Service.dll
+C:\Data\DeloitteProject\Deloitte.Portal\Deloitte.Portal.Service\bin\Debug\netcoreapp3.1\Deloitte.Portal.Service.pdb
+C:\Data\DeloitteProject\Deloitte.Portal\Deloitte.Portal.Service\obj\Debug\netcoreapp3.1\Deloitte.Portal.Service.csproj.AssemblyReference.cache
+C:\Data\DeloitteProject\Deloitte.Portal\Deloitte.Portal.Service\obj\Debug\netcoreapp3.1\Deloitte.Portal.Service.GeneratedMSBuildEditorConfig.editorconfig
+C:\Data\DeloitteProject\Deloitte.Portal\Deloitte.Portal.Service\obj\Debug\netcoreapp3.1\Deloitte.Portal.Service.AssemblyInfoInputs.cache
+C:\Data\DeloitteProject\Deloitte.Portal\Deloitte.Portal.Service\obj\Debug\netcoreapp3.1\Deloitte.Portal.Service.AssemblyInfo.cs
+C:\Data\DeloitteProject\Deloitte.Portal\Deloitte.Portal.Service\obj\Debug\netcoreapp3.1\Deloitte.Portal.Service.csproj.CoreCompileInputs.cache
+C:\Data\DeloitteProject\Deloitte.Portal\Deloitte.Portal.Service\obj\Debug\netcoreapp3.1\Deloitte.Portal.Service.dll
+C:\Data\DeloitteProject\Deloitte.Portal\Deloitte.Portal.Service\obj\Debug\netcoreapp3.1\Deloitte.Portal.Service.pdb
+C:\Data\DeloitteProject\Deloitte.Portal\Deloitte.Portal.Service\bin\Debug\netcoreapp3.1\Deloitte.Portal.DataAccess.dll
+C:\Data\DeloitteProject\Deloitte.Portal\Deloitte.Portal.Service\bin\Debug\netcoreapp3.1\Deloitte.Portal.Model.dll
+C:\Data\DeloitteProject\Deloitte.Portal\Deloitte.Portal.Service\bin\Debug\netcoreapp3.1\Deloitte.Portal.DataAccess.pdb
+C:\Data\DeloitteProject\Deloitte.Portal\Deloitte.Portal.Service\bin\Debug\netcoreapp3.1\Deloitte.Portal.Model.pdb
+C:\Data\DeloitteProject\Deloitte.Portal\Deloitte.Portal.Service\obj\Debug\netcoreapp3.1\Deloitte.Portal.Service.csproj.CopyComplete

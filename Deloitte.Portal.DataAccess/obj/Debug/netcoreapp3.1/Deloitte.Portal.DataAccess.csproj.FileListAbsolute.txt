@@ -1,0 +1,13 @@
+C:\Data\DeloitteProject\Deloitte.Portal\Deloitte.Portal.DataAccess\bin\Debug\netcoreapp3.1\Deloitte.Portal.DataAccess.deps.json
+C:\Data\DeloitteProject\Deloitte.Portal\Deloitte.Portal.DataAccess\bin\Debug\netcoreapp3.1\Deloitte.Portal.DataAccess.dll
+C:\Data\DeloitteProject\Deloitte.Portal\Deloitte.Portal.DataAccess\bin\Debug\netcoreapp3.1\Deloitte.Portal.DataAccess.pdb
+C:\Data\DeloitteProject\Deloitte.Portal\Deloitte.Portal.DataAccess\obj\Debug\netcoreapp3.1\Deloitte.Portal.DataAccess.csproj.AssemblyReference.cache
+C:\Data\DeloitteProject\Deloitte.Portal\Deloitte.Portal.DataAccess\obj\Debug\netcoreapp3.1\Deloitte.Portal.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Data\DeloitteProject\Deloitte.Portal\Deloitte.Portal.DataAccess\obj\Debug\netcoreapp3.1\Deloitte.Portal.DataAccess.AssemblyInfoInputs.cache
+C:\Data\DeloitteProject\Deloitte.Portal\Deloitte.Portal.DataAccess\obj\Debug\netcoreapp3.1\Deloitte.Portal.DataAccess.AssemblyInfo.cs
+C:\Data\DeloitteProject\Deloitte.Portal\Deloitte.Portal.DataAccess\obj\Debug\netcoreapp3.1\Deloitte.Portal.DataAccess.csproj.CoreCompileInputs.cache
+C:\Data\DeloitteProject\Deloitte.Portal\Deloitte.Portal.DataAccess\obj\Debug\netcoreapp3.1\Deloitte.Portal.DataAccess.dll
+C:\Data\DeloitteProject\Deloitte.Portal\Deloitte.Portal.DataAccess\obj\Debug\netcoreapp3.1\Deloitte.Portal.DataAccess.pdb
+C:\Data\DeloitteProject\Deloitte.Portal\Deloitte.Portal.DataAccess\bin\Debug\netcoreapp3.1\Deloitte.Portal.Model.dll
+C:\Data\DeloitteProject\Deloitte.Portal\Deloitte.Portal.DataAccess\bin\Debug\netcoreapp3.1\Deloitte.Portal.Model.pdb
+C:\Data\DeloitteProject\Deloitte.Portal\Deloitte.Portal.DataAccess\obj\Debug\netcoreapp3.1\Deloitte.Portal.DataAccess.csproj.CopyComplete

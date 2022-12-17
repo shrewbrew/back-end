@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.HttpOverrides" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="3.1.31" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Deloitte.Portal.DataAccess\Deloitte.Portal.DataAccess.csproj" />
+    <ProjectReference Include="..\Deloitte.Portal.Model\Deloitte.Portal.Model.csproj" />
+  </ItemGroup>
+
+</Project>
