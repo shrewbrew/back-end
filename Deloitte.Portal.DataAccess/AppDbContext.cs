@@ -1,4 +1,5 @@
 ﻿using Deloitte.Portal.Model;
+using Deloitte.Portal.Model.Account;
 using Deloitte.Portal.Model.ClaimForms;
 using Deloitte.Portal.Model.Test;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -11,7 +12,7 @@ using System.Text;
 
 namespace Deloitte.Portal.DataAccess
 {
-    public class AppDbContext : IdentityDbContext
+    public class AppDbContext : IdentityDbContext<DeloitteUsers>
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {

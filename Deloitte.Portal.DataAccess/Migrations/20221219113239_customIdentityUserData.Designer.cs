@@ -4,14 +4,16 @@ using Deloitte.Portal.DataAccess;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Deloitte.Portal.DataAccess.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221219113239_customIdentityUserData")]
+    partial class customIdentityUserData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -369,9 +371,6 @@ namespace Deloitte.Portal.DataAccess.Migrations
                         .HasColumnType("bigint");
 
                     b.Property<string>("streetNameAndNumber")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("swornAffirmationDeclarationFile")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<long>("telephoneNumber")

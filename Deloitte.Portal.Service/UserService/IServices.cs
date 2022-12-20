@@ -17,8 +17,9 @@ namespace Deloitte.Portal.Service.UserService
        IEnumerable<fileDataCollection> ProcessToUploadGovernmentID(SectionOneModel model, string requestId);
 
 
-        string ProcessToUploadChequeAndDeposit(PaymentInformationSectionOne model);
-        string ProcessToUploadAuthorizationFile(SectionThreeModel model);
+        IEnumerable<fileDataCollection> ProcessToUploadChequeAndDeposit(PaymentInformationSectionOne model);
+        IEnumerable<fileDataCollection> ProcessToUploadAuthorizationFile(SectionThreeModel model);
+        IEnumerable<fileDataCollection> ProcessToUploadSwornFile(SectionFiveModel model);
         string GetRegNumber();
 
         string GetUserMachineIpAddres();

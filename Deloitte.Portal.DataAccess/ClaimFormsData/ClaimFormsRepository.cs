@@ -60,15 +60,40 @@ namespace Deloitte.Portal.DataAccess.ClaimFormsData
             }
         }
 
-        public bool InsertFirstNation(ClaimReserveForm claimReserveForm)
+        public bool InsertFirstNation(ClaimReserveForm claimReserveForm, int claimId)
         {
             try
             {
                 context.Add(claimReserveForm);
                 context.SaveChanges();
+                updateClaimId(claimId, claimReserveForm.nameOfFirstNation);
+                
                 return true;
             }
             catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private void updateClaimId(int claimId, string nameofFirstNation)
+        {
+            string connectionString = configuration.GetConnectionString("DatabaseConnection");
+            int i = 0;
+            try
+            {
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+
+                    SqlCommand cmd = new SqlCommand("update ClaimReserve SET claimID = @claimId where nameOfFirstNation = @nameofFirstNation", con);
+                    cmd.Parameters.AddWithValue("@claimId", claimId);
+                    cmd.Parameters.AddWithValue("@nameofFirstNation", nameofFirstNation);
+                    con.Open();
+                    i = cmd.ExecuteNonQuery();
+                    con.Close();
+
+                }
+            } catch(Exception ex)
             {
                 throw ex;
             }
@@ -141,7 +166,7 @@ namespace Deloitte.Portal.DataAccess.ClaimFormsData
             return context.Claims.Find(claimId);
         }
 
-        public bool InsertSectionOneB(ClaimFormsModel claimFormsModel)
+        public bool InsertSectionOneB(ClaimFormsModel claimFormsModel, int fileId)
         {
             try
             {
@@ -149,6 +174,11 @@ namespace Deloitte.Portal.DataAccess.ClaimFormsData
                 context.Entry(claimFormsModel).Property(x => x.chequeOrDepositFormFile).IsModified= true;
                 //data.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
                 context.SaveChanges();
+                //int claimId = GetClaimId(claimFormsModel);
+                if (fileId != 0)
+                {
+                    var status = InsertDataToClaimFiles(claimFormsModel.claimID, fileId);
+                }
                 return true;
             }
             catch (Exception ex)
@@ -157,7 +187,7 @@ namespace Deloitte.Portal.DataAccess.ClaimFormsData
             }
         }
 
-        public bool InsertSectionThree(ClaimFormsModel claimFormsModel)
+        public bool InsertSectionThree(ClaimFormsModel claimFormsModel, int fileId)
         {
             try
             {
@@ -165,6 +195,29 @@ namespace Deloitte.Portal.DataAccess.ClaimFormsData
                 context.Entry(claimFormsModel).Property(x => x.authorizationFile).IsModified = true;
                 //data.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
                 context.SaveChanges();
+                if (fileId != 0)
+                {
+                    var status = InsertDataToClaimFiles(claimFormsModel.claimID, fileId);
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public bool InsertSectionFive(ClaimFormsModel claimFormsModel, int fileId)
+        {
+            try
+            {
+                var data = context.Claims.Attach(claimFormsModel);
+                context.Entry(claimFormsModel).Property(x => x.swornAffirmationDeclarationFile).IsModified = true;
+                //data.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                context.SaveChanges();
+                if (fileId != 0)
+                {
+                    var status = InsertDataToClaimFiles(claimFormsModel.claimID, fileId);
+                }
                 return true;
             }
             catch (Exception ex)
@@ -184,6 +237,25 @@ namespace Deloitte.Portal.DataAccess.ClaimFormsData
                 return true;
             }
             catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public bool InsertSectionFourB(ClaimFormsModel model)
+        {
+            try
+            {
+               var data = context.Claims.Attach(model);
+               var dataItem = context.Claims.Where(x => x.claimID == model.claimID).ToList();
+                foreach (var item in dataItem)
+                {
+                    item.digestiveInjuries = model.digestiveInjuries;
+                }
+                context.SaveChanges();
+                return true;
+            }
+            catch(Exception ex)
             {
                 throw ex;
             }

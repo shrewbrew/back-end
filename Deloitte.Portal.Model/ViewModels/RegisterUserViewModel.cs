@@ -8,7 +8,11 @@ namespace Deloitte.Portal.Model.ViewModels
     public class RegisterUserViewModel
     {
         [Required]
-        public string Username { get; set; }
+        public string firstName { get; set; }
+
+        [Required]
+        public string lastName { get; set; }
+
         [Required]
         [EmailAddress]
         [Remote(action: "IsEmailInUse", controller:"Account")]

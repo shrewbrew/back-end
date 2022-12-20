@@ -51,8 +51,10 @@ namespace Deloitte.Portal.Service.UserService
             return httpContextAccessor.HttpContext.User.Identity.Name;
         }
 
-        public string ProcessToUploadChequeAndDeposit(PaymentInformationSectionOne model)
+        public IEnumerable<fileDataCollection> ProcessToUploadChequeAndDeposit(PaymentInformationSectionOne model)
         {
+            List<fileDataCollection> lstfile = new List<fileDataCollection>();
+            fileDataCollection fileDataCollection = new fileDataCollection();
             string filename = null;
             if (model.CheckorDepositFile != null)
             {
@@ -72,12 +74,47 @@ namespace Deloitte.Portal.Service.UserService
                     context.Add(filetype);
                     context.SaveChanges();
                 }
+                int fileId = GetInsertedFileID(filename);
+                fileDataCollection.filename = filename;
+                fileDataCollection.fileId = fileId;
+                lstfile.Add(fileDataCollection);
             }
-            return filename;
+            return lstfile;
         }
-
-        public string ProcessToUploadAuthorizationFile(SectionThreeModel model)
+        public IEnumerable<fileDataCollection> ProcessToUploadSwornFile(SectionFiveModel model)
         {
+            List<fileDataCollection> lstfile = new List<fileDataCollection>();
+            fileDataCollection fileDataCollection = new fileDataCollection();
+            string filename = null;
+            if (model.swornFile != null)
+            {
+                string uploadFileLocation = FileUploadLocation();
+                filename = Guid.NewGuid().ToString() + "_SwornAffirmation_" + model.swornFile.FileName;
+                string filePath = Path.Combine(uploadFileLocation, filename);
+                using (var filestream = new FileStream(filePath, FileMode.Create))
+                {
+                    model.swornFile.CopyTo(filestream);
+
+                    Deloitte.Portal.Model.ClaimForms.File filetype = new Model.ClaimForms.File();
+                    filetype.fileName = filename;
+                    filetype.fileLocation = filePath;
+                    filetype.fileSize = Convert.ToString(model.swornFile.Length);
+                    filetype.documentType = "Sworn Affirmation";
+                    filetype.fileExtension = Path.GetExtension(model.swornFile.FileName);
+                    context.Add(filetype);
+                    context.SaveChanges();
+                }
+                int fileId = GetInsertedFileID(filename);
+                fileDataCollection.filename = filename;
+                fileDataCollection.fileId = fileId;
+                lstfile.Add(fileDataCollection);
+            }
+            return lstfile;
+        }
+        public IEnumerable<fileDataCollection> ProcessToUploadAuthorizationFile(SectionThreeModel model)
+        {
+            List<fileDataCollection> lstfile = new List<fileDataCollection>();
+            fileDataCollection fileDataCollection = new fileDataCollection();
             string filename = null;
             if (model.AuthorizationFile != null)
             {
@@ -97,8 +134,12 @@ namespace Deloitte.Portal.Service.UserService
                     context.Add(filetype);
                     context.SaveChanges();
                 }
+                int fileId = GetInsertedFileID(filename);
+                fileDataCollection.filename = filename;
+                fileDataCollection.fileId = fileId;
+                lstfile.Add(fileDataCollection);
             }
-            return filename;
+            return lstfile;
         }
         public class fileDataCollection
         {
